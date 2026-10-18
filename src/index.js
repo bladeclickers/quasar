@@ -1,17 +1,8 @@
 import "dotenv/config";
 import { getRoutes, createFetchHandler } from "./server.js";
 
-const analytics = `<script async src="https://www.googletagmanager.com/gtag/js?id=G-7JPJ866MG9"></script>
-      <script>window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag("js", new Date());
-      gtag("config", "G-7JPJ866MG9");</script>`;
-
-
-const sponsorScript = `<script>console.log("e");</script>`;
-
 function injectHtml(html, pathname) {
-	return html.replace(/<\/body>/i, `${analytics}\n${sponsorScript}\n</body>`);
+	return html.replace(/<\/body>/i, `\n</body>`);
 }
 
 const PORT = process.env.PORT || 3000;
