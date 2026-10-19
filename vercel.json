@@ -1,0 +1,19 @@
+{
+	"$schema": "https://openapi.vercel.sh/vercel.json",
+	"framework": null,
+	"installCommand": "bun install",
+	"buildCommand": "bun run build:static",
+	"outputDirectory": "dist",
+	"rewrites": [
+		{ "source": "/g/:path*", "destination": "/work/" },
+		{ "source": "/autoc", "destination": "/api/autoc" }
+	],
+	"headers": [
+		{
+			"source": "/(.*)",
+			"headers": [
+				{ "key": "Cross-Origin-Resource-Policy", "value": "cross-origin" }
+			]
+		}
+	]
+}

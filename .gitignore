@@ -6,3 +6,4 @@ Caddyfile
 dist
 .kilo
 scripts/aws-upload.sh
+.vercel
